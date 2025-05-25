@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitals Monitor</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Global Styles */
+      body {
+        background: linear-gradient(
+          to right,
+          #ff9ace,
+          hsl(284, 100%, 67%)
+        ); /* Matching homepage gradient */
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2); /* Transparent Background */
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      /* Header */
+      header {
+        margin-top: 40px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      /* Vitals Section */
+      .vitals-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+
+      .vital-box {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        width: 280px;
+      }
+
+      .vital-box input {
+        width: 90%;
+        padding: 12px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.5);
+        color: #000;
+      }
+
+      .vital-box button {
+        margin-top: 10px;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #000;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .vital-box button:hover {
+        background: #e91e63;
+      }
+
+      /* Buttons */
+      .buttons {
+        margin-top: 20px;
+      }
+
+      .buttons button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 8px;
+        background: #000;
+        color: white;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+      }
+
+      .buttons button:hover {
+        background: #e91e63;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>hc.ai</h1>
+    </nav>
+
+    <header>
+      <h2>Track Your Vitals</h2>
+    </header>
+
+    <section class="vitals-container">
+      <div class="vital-box">
+        <h2>Heart Rate</h2>
+        <p id="heart-rate">-- bpm</p>
+        <input
+          type="text"
+          id="heart-rate-input"
+          placeholder="Enter Heart Rate"
+        />
+        <button id="fetch-heart-rate">Fetch from Device</button>
+      </div>
+      <div class="vital-box">
+        <h2>SpO₂ Level</h2>
+        <p id="spo2">-- %</p>
+        <input type="text" id="spo2-input" placeholder="Enter SpO₂ Level" />
+        <button id="fetch-spo2">Fetch from Device</button>
+      </div>
+      <div class="vital-box">
+        <h2>Blood Pressure</h2>
+        <input
+          type="text"
+          id="bp-input"
+          placeholder="Enter BP (e.g., 120/80 mmHg)"
+        />
+      </div>
+      <div class="vital-box">
+        <h2>BMI Calculator</h2>
+        <input type="number" id="height" placeholder="Height (cm)" />
+        <input type="number" id="weight" placeholder="Weight (kg)" />
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <p id="bmi">--</p>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button id="copy-vitals">Copy Vitals</button>
+      <button onclick="location.href='ai-chatbot.html'">
+        Get AI Assistance
+      </button>
+    </div>
+
+    <script src="vitals.js"></script>
+  </body>
+</html>

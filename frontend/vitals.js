@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("WebSocket Error:", error);
     };
 
-    ws.onclose = function () {
-        console.warn("WebSocket Disconnected! Trying to reconnect...");
-        setTimeout(() => location.reload(), 5000); // Auto-refresh page after 5 sec
-    };
+    // ws.onclose = function () {
+    //     console.warn("WebSocket Disconnected! Trying to reconnect...");
+    //     setTimeout(() => location.reload(), 5000); // Auto-refresh page after 5 sec
+    // };
 
     // Manual Fetch Buttons
     fetchHeartRateButton.addEventListener("click", function () {
